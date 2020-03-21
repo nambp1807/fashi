@@ -14,10 +14,10 @@ class WebController extends Controller
 
     public function home()
     {
-        $newests = Product::orderBy('created_at','desc')->take(4)->get();
-        $cheaps = Product::orderBy('price')->take(4)->get();
-        $exs = Product::orderBy('price','desc')->take(4)->get();
-        return view("home",['newests'=>$newests,'cheaps'=>$cheaps,'exs'=>$exs]);
+        $newests = Product::Where('category_id',2)->take(5)->get();
+        $cheaps = Product::Where('category_id',1)->take(5)->get();
+
+        return view("home",['newests'=>$newests,'cheaps'=>$cheaps]);
     }
 
     public function listing($id){
