@@ -54,6 +54,13 @@ Route::get("/register","WebController@register");
 Route::get("/checkout",'WebController@checkout')->middleware("auth");
 Route::post("checkout",'WebController@placeOrder')->middleware("auth");
 Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
+Route::get("/order-history/{id}",'WebController@historyOrder')->middleware("auth");
+Route::get("/viewOrder/{id}",'WebController@viewOrder')->middleware("auth");
+
+Route::get("/deleteOrder/{id}",'WebController@orderDestroy')->middleware("auth");
+Route::get("/blog",'WebController@blog');
+Route::get("/blog-details",'WebController@blogDetail');
+Route::get("/contact",'WebController@contact');
 
 
 Auth::routes();

@@ -156,11 +156,53 @@ class WebController extends Controller
     }
 
     public function login(){
-
+        if (Auth::check()){
+            $this->login()==true;
+        }
         return view('login');
     }
     public function register(){
         return view('register');
     }
+
+    public function historyOrder($id){
+            $id = Auth::id();
+            $newests = Order::Where('user_id',$id)->orderBy('created_at')->get();
+            return view('orderHistory',['newests'=>$newests]);
+
+    }
+
+
+    public function orderDestroy($id){
+        $order = Order::find($id);
+        try {
+            $order->delete($id);
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        foreach ($order as $p){
+            DB::table("orders_products")->delete($id);
+        }
+        return redirect()->to("/order-history/{id}");
+    }
+
+
+    public function viewOrder($id){
+
+        $order = Order::find($id);
+        $order_products = Order::where("id",$id)->get();
+        return view('overViews',['order'=>$order,'order_products'=>$order_products]);
+    }
+    public function blog(){
+        return view('blog');
+    }
+    public function blogDetail(){
+        return view('blog-detail');
+    }
+
+    public function contact(){
+        return view('contact');
+    }
+
 
 }

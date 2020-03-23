@@ -137,14 +137,14 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="./blog.html">Blog</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="{{url('blog')}}">Blog</a></li>
+                    <li><a href="{{url('contact')}}">Contact</a></li>
                     <li><a href="#">Pages</a>
                         <ul class="dropdown">
-                            <li><a href="./blog-details.html">Blog Details</a></li>
+                            <li><a href="{{url('blog-details')}}">Blog Details</a></li>
                             <li><a href="{{url('cart')}}">Shopping Cart</a></li>
                             <li><a href="{{url('checkout')}}">Checkout</a></li>
-                            <li><a href="./faq.html">Faq</a></li>
+                            <li><a href="{{url('order-history/{id}')}}">History Purchase </a></li>
                             <li><a href="{{url('register')}}">Register</a></li>
                             <li><a href="{{url('login')}}">Login</a></li>
                         </ul>

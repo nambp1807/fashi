@@ -30,7 +30,7 @@
                             <h1>Black friday</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            <a href="{{url("listing/2")}}" class="primary-btn">Shop Now</a>
                         </div>
                     </div>
                     <div class="off-card">
@@ -103,9 +103,9 @@
                                     <i class="icon_heart_alt"></i>
                                 </div>
                                 <ul>
-                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="w-icon active"><a href="{{url("shopping/{$n->id}")}}"><i class="icon_bag_alt"></i></a></li>
                                     <li class="quick-view"><a href="{{url("/product/{$n->id}")}}">+ Quick View</a></li>
-                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                    <li class="w-icon"><a href="{{url("/product/{$n->id}")}}"><i class="fa fa-random"></i></a></li>
                                 </ul>
                             </div>
                             <div class="pi-text">
@@ -185,9 +185,9 @@
                                         <i class="icon_heart_alt"></i>
                                     </div>
                                     <ul>
-                                        <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                        <li class="w-icon active"><a href="{{url("shopping/{$n->id}")}}"><i class="icon_bag_alt"></i></a></li>
                                         <li class="quick-view"><a href="{{url("/product/{$n->id}")}}">+ Quick View</a></li>
-                                        <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                        <li class="w-icon"><a href="{{url("/product/{$n->id}")}}"><i class="fa fa-random"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="pi-text">
