@@ -16,7 +16,7 @@ class WebController extends Controller
 
     public function home()
     {
-        Mail::to("nambpth1902008@gmail.com")->send(new OrderCreated());
+
         $newests = Product::Where('category_id',2)->take(5)->get();
         $cheaps = Product::Where('category_id',1)->take(5)->get();
 
@@ -153,7 +153,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
-        Mail::to("nambpth1902008@gmail.com")->send(new OrderCreated());
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
         return redirect()->to('checkout-success');
     }
     public function checkoutSuccess(){
