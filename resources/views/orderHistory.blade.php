@@ -30,7 +30,7 @@
                                 <th>Shipping Address</th>
                                 <th>Telephone</th>
                                 <th>Grand Total</th>
-                                <th>Payment Total</th>
+                                <th>Payment Method</th>
                                 <th>Date Purchase</th>
                                 <th>Action</th>
                             </tr>

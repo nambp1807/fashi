@@ -191,8 +191,11 @@ class WebController extends Controller
 
         $order = Order::find($id);
         $order_products = Order::where("id",$id)->get();
+        dd($id);
         return view('overViews',['order'=>$order,'order_products'=>$order_products]);
+
     }
+
     public function blog(){
         return view('blog');
     }

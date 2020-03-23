@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="select-total">
                                     <span>total:</span>
-                                    <h5>$ </h5>
+                                    <h5>$  </h5>
                                 </div>
                                 <div class="select-button">
                                     <a href="{{url("/cart")}}" class="primary-btn view-card">VIEW CARD</a>
@@ -115,14 +115,14 @@
                     <i class="ti-menu"></i>
                     <span>All departments</span>
                     <ul class="depart-hover">
-                        <li class="active"><a href="#">Women’s Clothing</a></li>
-                        <li><a href="#">Men’s Clothing</a></li>
-                        <li><a href="#">Underwear</a></li>
-                        <li><a href="#">Kid's Clothing</a></li>
-                        <li><a href="#">Brand Fashion</a></li>
-                        <li><a href="#">Accessories/Shoes</a></li>
-                        <li><a href="#">Luxury Brands</a></li>
-                        <li><a href="#">Brand Outdoor Apparel</a></li>
+                        <li class="active"><a href="{{url('listing/2')}}">Women’s Clothing</a></li>
+                        <li><a href="{{url('listing/1')}}">Men’s Clothing</a></li>
+{{--                        <li><a href="{{url('listing/2')}}">Underwear</a></li>--}}
+{{--                        <li><a href="{{url('listing/2')}}">Kid's Clothing</a></li>--}}
+                        <li><a href="{{url('listing/2')}}">Brand Fashion</a></li>
+                        <li><a href="{{url('listing/3')}}">Accessories/Shoes</a></li>
+{{--                        <li><a href="#">Luxury Brands</a></li>--}}
+{{--                        <li><a href="#">Brand Outdoor Apparel</a></li>--}}
                     </ul>
                 </div>
             </div>
@@ -145,8 +145,8 @@
                             <li><a href="{{url('cart')}}">Shopping Cart</a></li>
                             <li><a href="{{url('checkout')}}">Checkout</a></li>
                             <li><a href="{{url('order-history/{id}')}}">History Purchase </a></li>
-                            <li><a href="{{url('register')}}">Register</a></li>
-                            <li><a href="{{url('login')}}">Login</a></li>
+{{--                            <li><a href="{{url('register')}}">Register</a></li>--}}
+{{--                            <li><a href="{{url('login')}}">Login</a></li>--}}
                         </ul>
                     </li>
                 </ul>
