@@ -16,6 +16,7 @@ class WebController extends Controller
 
     public function home()
     {
+        Mail::to("nambpth1902008@gmail.com")->send(new OrderCreated());
         $newests = Product::Where('category_id',2)->take(5)->get();
         $cheaps = Product::Where('category_id',1)->take(5)->get();
 
@@ -131,6 +132,7 @@ class WebController extends Controller
         foreach ($cart as $p){
             $grand_total += ($p->price * $p->cart_qty);
         }
+
         $order = Order::create([
             'user_id'=>Auth::id(),
             'customer_name'=>$request ->get('customer_name'),
@@ -158,15 +160,6 @@ class WebController extends Controller
             return view('shopping-success');
     }
 
-    public function login(){
-        if (Auth::check()){
-            $this->login()==true;
-        }
-        return view('login');
-    }
-    public function register(){
-        return view('register');
-    }
 
     public function historyOrder($id){
             $id = Auth::id();
