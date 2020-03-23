@@ -99,7 +99,7 @@
                                                     <table width="100%" cellspacing="0" cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td class="esd-block-image es-m-p0l" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="{{asset("img/logo.png")}}" alt="Children's logo" title="Children's logo" width="166"></a></td>
+                                                            <td class="esd-block-image es-m-p0l" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="img/logo.png" alt="Children's logo" title="Children's logo" width="166"></a></td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -159,7 +159,7 @@
                                                     <table style="background-repeat: no-repeat;" width="100%" cellspacing="0" cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td class="esd-block-banner" style="position: relative;" align="center" esdev-config="h2"><a target="_blank" href="https://viewstripo.email"><img class="adapt-img esdev-stretch-width esdev-banner-rendered" src="https://tlr.stripocdn.email/content/guids/bannerImgGuid/images/9871577271907696.png" alt="Happy Easter! 20% OFF almost everything, online and in store." title="Happy Easter! 20% OFF almost everything, online and in store." width="600"></a></td>
+                                                            <td class="esd-block-banner" style="position: relative;" align="center" esdev-config="h2"><a target="_blank" href="https://viewstripo.email"><img class="adapt-img esdev-stretch-width esdev-banner-rendered" src="https://tlr.stripocdn.email/content/guids/bannerImgGuid/images/9871577271907696.png"  width="600"></a></td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -469,37 +469,37 @@
                     </tr>
                     </tbody>
                 </table>
-                <table class="esd-footer-popover es-content" cellspacing="0" cellpadding="0" align="center">
-                    <tbody>
-                    <tr>
-                        <td class="esd-stripe" align="center">
-                            <table class="es-content-body" style="background-color: transparent;" width="600" cellspacing="0" cellpadding="0" bgcolor="#edb6b8" align="center">
-                                <tbody>
-                                <tr>
-                                    <td class="esd-structure es-p30t es-p30b es-p20r es-p20l" align="left">
-                                        <table width="100%" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                            <tr>
-                                                <td class="esd-container-frame" width="560" valign="top" align="center">
-                                                    <table width="100%" cellspacing="0" cellpadding="0">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="esd-block-image es-infoblock made_with" align="center" style="font-size:0"><a target="_blank" href="https://viewstripo.email/?utm_source=templates&utm_medium=email&utm_campaign=children&utm_content=easter"><img src="https://tlr.stripocdn.email/content/guids/CABINET_9df86e5b6c53dd0319931e2447ed854b/images/64951510234941531.png" alt width="125"></a></td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+{{--                <table class="esd-footer-popover es-content" cellspacing="0" cellpadding="0" align="center">--}}
+{{--                    <tbody>--}}
+{{--                    <tr>--}}
+{{--                        <td class="esd-stripe" align="center">--}}
+{{--                            <table class="es-content-body" style="background-color: transparent;" width="600" cellspacing="0" cellpadding="0" bgcolor="#edb6b8" align="center">--}}
+{{--                                <tbody>--}}
+{{--                                <tr>--}}
+{{--                                    <td class="esd-structure es-p30t es-p30b es-p20r es-p20l" align="left">--}}
+{{--                                        <table width="100%" cellspacing="0" cellpadding="0">--}}
+{{--                                            <tbody>--}}
+{{--                                            <tr>--}}
+{{--                                                <td class="esd-container-frame" width="560" valign="top" align="center">--}}
+{{--                                                    <table width="100%" cellspacing="0" cellpadding="0">--}}
+{{--                                                        <tbody>--}}
+{{--                                                        <tr>--}}
+{{--                                                            <td class="esd-block-image es-infoblock made_with" align="center" style="font-size:0"><a target="_blank" href="https://viewstripo.email/?utm_source=templates&utm_medium=email&utm_campaign=children&utm_content=easter"><img src="https://tlr.stripocdn.email/content/guids/CABINET_9df86e5b6c53dd0319931e2447ed854b/images/64951510234941531.png" alt width="125"></a></td>--}}
+{{--                                                        </tr>--}}
+{{--                                                        </tbody>--}}
+{{--                                                    </table>--}}
+{{--                                                </td>--}}
+{{--                                            </tr>--}}
+{{--                                            </tbody>--}}
+{{--                                        </table>--}}
+{{--                                    </td>--}}
+{{--                                </tr>--}}
+{{--                                </tbody>--}}
+{{--                            </table>--}}
+{{--                        </td>--}}
+{{--                    </tr>--}}
+{{--                    </tbody>--}}
+{{--                </table>--}}
             </td>
         </tr>
         </tbody>

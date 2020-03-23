@@ -153,7 +153,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
-        Mail::to('phuongnam7744@gmail.com')->send(new OrderCreated($order));
+        Mail::to($request->user())->send(new OrderCreated($order));
         return redirect()->to('checkout-success');
     }
     public function checkoutSuccess(){
@@ -187,7 +187,7 @@ class WebController extends Controller
 
         $order = Order::find($id);
         $order_products = Order::where("id",$id)->get();
-        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
+        dd($id);
         return view('overViews',['order'=>$order,'order_products'=>$order_products]);
 
     }
@@ -201,9 +201,6 @@ class WebController extends Controller
 
     public function contact(){
         return view('contact');
-    }
-    public function order(){
-        return view('emails/ordercreated');
     }
 
 
