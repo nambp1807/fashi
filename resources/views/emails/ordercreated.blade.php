@@ -99,7 +99,7 @@
                                                     <table width="100%" cellspacing="0" cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td class="esd-block-image es-m-p0l" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="https://tlr.stripocdn.email/content/guids/CABINET_da561ca597882d9e3d6d4fc74460ad8d/images/83041511250087578.png" alt="Children's logo" title="Children's logo" width="166"></a></td>
+                                                            <td class="esd-block-image es-m-p0l" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="{{asset("img/logo.png")}}" alt="Children's logo" title="Children's logo" width="166"></a></td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -119,9 +119,9 @@
                                                                 <table class="es-menu" width="100%" cellspacing="0" cellpadding="0">
                                                                     <tbody>
                                                                     <tr class="links">
-                                                                        <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Dolls</a></td>
-                                                                        <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Arts & Crafts</a></td>
-                                                                        <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Plush toy</a></td>
+                                                                        <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Men's</a></td>
+                                                                        <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Women's</a></td>
+                                                                        <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Accessor's</a></td>
                                                                         <td class="es-p10t es-p10b es-p5r es-p5l" style="padding-bottom: 10px; padding-top: 15px; " width="25.00%" bgcolor="transparent" align="center"><a target="_blank" style="color: #333333 !important;" href="https://viewstripo.email">Learning</a></td>
                                                                     </tr>
                                                                     </tbody>
@@ -260,7 +260,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t es-p10b es-p20r es-p20l" align="center">
-                                                                <p style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Enter the code <strong>EASTER18</strong> at the online checkout</p>
+                                                                <p style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Tổng giá trị đơn hàng: ${{$order->grand_total}}</p>
                                                                 <p style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">or present this email in store.</p>
                                                             </td>
                                                         </tr>
