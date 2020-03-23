@@ -187,7 +187,7 @@ class WebController extends Controller
 
         $order = Order::find($id);
         $order_products = Order::where("id",$id)->get();
-        dd($id);
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
         return view('overViews',['order'=>$order,'order_products'=>$order_products]);
 
     }
@@ -201,6 +201,9 @@ class WebController extends Controller
 
     public function contact(){
         return view('contact');
+    }
+    public function order(){
+        return view('emails/ordercreated');
     }
 
 
