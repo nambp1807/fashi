@@ -65,7 +65,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="es-infoblock esd-block-text" align="right">
-                                                                <p><a href="https://viewstripo.email" class="view" target="_blank">View online</a></p>
+                                                                <p><a href="http://php-laravel-02.herokuapp.com/" class="view" target="_blank">View online</a></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -99,7 +99,7 @@
                                                     <table width="100%" cellspacing="0" cellpadding="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td class="esd-block-image es-m-p0l" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="img/logo.png" alt="Children's logo" title="Children's logo" width="166"></a></td>
+                                                            <td class="esd-block-image es-m-p0l" align="center" style="font-size:0"><a href="http://php-laravel-02.herokuapp.com/" target="_blank"><img src="http://php-laravel-02.herokuapp.com/img/logo.png" alt="Fashi logo" title="Fashi's logo" width="166"></a></td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -260,8 +260,8 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t es-p10b es-p20r es-p20l" align="center">
-                                                                <p style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Tổng giá trị đơn hàng: ${{$order->grand_total}}</p>
-                                                                <p style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">or present this email in store.</p>
+                                                                <h3 style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Tổng giá trị đơn hàng: ${{$order->grand_total}}</h3>
+
                                                             </td>
                                                         </tr>
                                                         <tr>

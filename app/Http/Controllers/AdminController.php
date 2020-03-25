@@ -238,14 +238,14 @@ class AdminController extends Controller
         $request->validate([
             "name"=> "required|string|max:255:users,name,",
             "email"=> "required|string|email|max:255|unique:users,email,",
-            "passwords"=> "required|string|min:8:users,passwords,",
+            "password"=> "required|string|min:8:users,password,",
             "role"=> "required|Integer:users,role,",
         ]);
         try{
             User::create([
                 "name"=> $request->get("name"),
                 "email"=> $request->get("email"),
-                "passwords"=> $request->get("passwords"),
+                "password"=> $request->get("password"),
                 "role"=> $request->get("role")
             ]);
         }catch(\Exception $e){
@@ -264,7 +264,7 @@ class AdminController extends Controller
         $request->validate([
             "name"=> "required|string|max:255:users,name,".$id,
             "email"=> "required|string|email|max:255|unique:users,email,".$id,
-            "passwords"=> "required|string|min:8|confirmed:users,passwords,".$id,
+            "password"=> "required|string|min:8:users,password,".$id,
             "role"=> "required|Integer:users,role,".$id,
         ]);
 
@@ -272,7 +272,7 @@ class AdminController extends Controller
             $user->update([
                 "name"=> $request->get("name"),
                 "email"=> $request->get("email"),
-                "passwords"=> $request->get("passwords"),
+                "password" => $request->get("password"),
                 "role"=> $request->get("role")
             ]);
         }catch(\Exception $e){
@@ -283,6 +283,7 @@ class AdminController extends Controller
 
 
     public function userDestroy($id){
+        //kiem tra co phai admin hay khong
         $user = User::find($id);
         try {
             $user->delete(); // xoa cung // CRUD

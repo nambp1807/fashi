@@ -41,6 +41,7 @@ Route::get("/form-list-user",function (){
 Route ::get("/form-edit","UserController@listName");
 
 Route ::get("/","WebController@home");
+Route ::get("/search","WebController@search");
 Route ::get("/product/{id}","WebController@product");
 Route ::get("/listing/{id}","WebController@listing");
 Route ::get("/shopping/{id}","WebController@shopping")->middleware("auth");
@@ -55,18 +56,20 @@ Route::get("/checkout",'WebController@checkout')->middleware("auth");
 Route::post("checkout",'WebController@placeOrder')->middleware("auth");
 Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
 Route::get("/order-history/{id}",'WebController@historyOrder')->middleware("auth");
-Route::get("/viewOrder/{id}",'WebController@viewOrder')->middleware("auth");
+Route::get("/viewOrder",'WebController@viewOrder')->middleware("auth");
 
-Route::get("/deleteOrder/{id}",'WebController@orderDestroy')->middleware("auth");
+Route::get("/deleteOrder",'WebController@odeleteOrder')->middleware("auth");
 Route::get("/blog",'WebController@blog');
 Route::get("/blog-details",'WebController@blogDetail');
 Route::get("/contact",'WebController@contact');
+Route::get("/c",'WebController@order');
 
 
 Auth::routes();
 
 Route::get('/logout',function(){
     \Illuminate\Support\Facades\Auth::logout();
+
     return redirect()->to("/login");
 });
 

@@ -44,10 +44,10 @@
                 <div class="col-lg-7 col-md-7">
                     <div class="advanced-search">
                         <button type="button" class="category-btn">All Categories</button>
-                        <div class="input-group">
-                            <input type="text" placeholder="What do you need?">
-                            <button type="button"><i class="ti-search"></i></button>
-                        </div>
+                        <form class="input-group" method="get" action="{{url('/search')}}">
+                            <input type="text" name="key" placeholder="What do you need?">
+                            <button type="submit"><i class="ti-search"></i></button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-3 text-right col-md-3">

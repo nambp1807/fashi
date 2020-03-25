@@ -22,6 +22,10 @@ class WebController extends Controller
 
         return view("home",['newests'=>$newests,'cheaps'=>$cheaps]);
     }
+    public function search(Request $request){
+        $product = Product::Where('product_name','like','%'.$request->key.'%')->orWhere('price',$request->key)->take(9)->get();
+        return view("listing",['product'=>$product]);
+    }
 
     public function listing($id){
         $products = Product::where("category_id",$id)->take(9)->get();
@@ -70,6 +74,7 @@ class WebController extends Controller
         foreach ($cart as $p){
             $cart_total +=($p->price*$p->cart_qty);
         }
+
         return view("cart",["cart"=>$cart,"cart_total"=>$cart_total]);
     }
 
@@ -89,22 +94,15 @@ class WebController extends Controller
 
         return redirect()->to("/");
     }
-    public function clearOneCart($id,Request $request)
-    {
-        $cart=$request->session()->get("cart");
-        $arrlength = count($cart);
-        $arr[]=[$id];
-        for($i=0;$i<$arrlength;$i++){
+//    public function clearOneCart($id,Request $request)
+//    {
+//        $cart=$request->session()->get("cart");
+//        $request->$cart($id);
+//        $cart::remove();
+//
+//        return redirect()->to("/");
+//    }
 
-            if($cart[$i]->id==$arr[0]){
-                $cart->delete($i);
-            }else{
-                $i+=1;
-            }
-        }
-
-        return redirect()->to("/");
-    }
     public function checkOut(Request $request){
         if (!$request->session()->has("cart")){
             return redirect()->to("/");
@@ -168,29 +166,37 @@ class WebController extends Controller
 
     }
 
-
-    public function orderDestroy($id){
-        $order = Order::find($id);
-        try {
-            $order->delete($id);
-        }catch (\Exception $e){
-            return redirect()->back();
-        }
-        foreach ($order as $p){
-            DB::table("orders_products")->delete($id);
-        }
-        return redirect()->to("/order-history/{id}");
-    }
+//
+//    public function orderDestroy($id){
+//        $order = Order::find($id);
+//        try {
+//            $order->delete($id);
+//        }catch (\Exception $e){
+//            return redirect()->back();
+//        }
+//        foreach ($order as $p){
+//            DB::table("orders_products")->delete($id);
+//        }
+//        return redirect()->to("/order-history/{id}");
+//    }
 
 
     public function viewOrder($id){
 
-        $order = Order::find($id);
+        $order= Order::find($id);
         $order_products = Order::where("id",$id)->get();
-        dd($id);
-        return view('overViews',['order'=>$order,'order_products'=>$order_products]);
+        return view('viewOrder',['order'=>$order,'order_products'=>$order_products]);
+    }
+    public function addOrder(){
 
     }
+
+    public function deleteOrder($id){
+        Order::destroy($id);
+        return back();
+    }
+
+
 
     public function blog(){
         return view('blog');

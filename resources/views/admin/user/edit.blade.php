@@ -35,10 +35,10 @@
                     <div class="form-group has-success">
                         <label for="cc-name" class="control-label mb-1">Password</label>
                         <input id="cc-name" name="password" type="text" value="{{$user->password}}"
-                               class="form-control cc-name @if($errors->has("passwords"))is-invalid @endif" >
+                               class="form-control cc-name @if($errors->has("password"))is-invalid @endif" >
                         <span class="help-block field-validation-valid"></span>
-                        @if($errors->has("passwords"))
-                            <p style="color:red">{{$errors->first("passwords")}}</p>
+                        @if($errors->has("password"))
+                            <p style="color:red">{{$errors->first("password")}}</p>
                         @endif
                     </div>
                     <div class="form-group has-success">
