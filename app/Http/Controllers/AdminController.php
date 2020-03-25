@@ -81,7 +81,7 @@ class AdminController extends Controller
 
     public function brandStore(Request $request){
         $request->validate([
-            "brand_name"=> "required|string|unique:brand"
+            "brand_name"=> "required|string|unique:brand,brand_name"
         ]);
         try{
             Brand::create([
@@ -101,7 +101,7 @@ class AdminController extends Controller
     public function brandUpdate($id,Request $request){
         $brands = Brand::find($id);
         $request->validate([
-            "brand_name"=> "required|string|unique:brand".$id
+            "brand_name"=> "required|string|unique:brand,brand_name,".$id
         ]);
 
         try{
@@ -143,15 +143,14 @@ class AdminController extends Controller
     public function productStore(Request $request){
         //kiem tra co phai admin hay khong
         $request->validate([
-            "product_name" =>
-                "required|string|unique:product",
+            "product_name" => "required|string|unique:product",
             "product_desc" => "required|string",
             "thumbnail" => "required|string",
             "gallery" => "required|string",
-            "category_id" => "required|numeric",
-            "brand_id" => "required|numeric",
+            "category_id" => "required|integer",
+            "brand_id" => "required|integer",
             "price" => "required|numeric",
-            "quantity" => "required|numeric"
+            "quantity" => "required|integer"
         ]);
 
         try {
@@ -236,10 +235,10 @@ class AdminController extends Controller
 
     public function userStore(Request $request){
         $request->validate([
-            "name"=> "required|string|max:255:users,name,",
+            "name"=> "required|string|max:255:users",
             "email"=> "required|string|email|max:255|unique:users,email,",
             "password"=> "required|string|min:8:users,password,",
-            "role"=> "required|numeric:users,role,",
+            "role"=> "required|Integer:users,role,",
         ]);
         try{
             User::create([
@@ -262,10 +261,10 @@ class AdminController extends Controller
     public function userUpdate($id,Request $request){
         $user = User::find($id);
         $request->validate([
-            "name"=> "required|string|max:255:users,name,".$id,
+            "name"=> "required|string|max:255:users".$id,
             "email"=> "required|string|email|max:255|unique:users,email,".$id,
             "password"=> "required|string|min:8:users,password,".$id,
-            "role"=> "required|numeric:users,role,".$id,
+            "role"=> "required|Integer:users,role,".$id,
         ]);
 
         try{
