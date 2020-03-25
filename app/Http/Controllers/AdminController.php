@@ -144,14 +144,14 @@ class AdminController extends Controller
         //kiem tra co phai admin hay khong
         $request->validate([
             "product_name" =>
-                "required|string|unique:product,product_name,",
+                "required|string|unique:product",
             "product_desc" => "required|string",
             "thumbnail" => "required|string",
             "gallery" => "required|string",
-            "category_id" => "required|integer",
-            "brand_id" => "required|integer",
+            "category_id" => "required|numeric",
+            "brand_id" => "required|numeric",
             "price" => "required|numeric",
-            "quantity" => "required|integer"
+            "quantity" => "required|numeric"
         ]);
 
         try {
