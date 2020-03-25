@@ -81,7 +81,7 @@ class AdminController extends Controller
 
     public function brandStore(Request $request){
         $request->validate([
-            "brand_name"=> "required|string|unique:brand,brand_name"
+            "brand_name"=> "required|string|unique:brand"
         ]);
         try{
             Brand::create([
@@ -101,7 +101,7 @@ class AdminController extends Controller
     public function brandUpdate($id,Request $request){
         $brands = Brand::find($id);
         $request->validate([
-            "brand_name"=> "required|string|unique:brand,brand_name,".$id
+            "brand_name"=> "required|string|unique:brand".$id
         ]);
 
         try{
@@ -239,7 +239,7 @@ class AdminController extends Controller
             "name"=> "required|string|max:255:users,name,",
             "email"=> "required|string|email|max:255|unique:users,email,",
             "password"=> "required|string|min:8:users,password,",
-            "role"=> "required|Integer:users,role,",
+            "role"=> "required|numeric:users,role,",
         ]);
         try{
             User::create([
@@ -265,7 +265,7 @@ class AdminController extends Controller
             "name"=> "required|string|max:255:users,name,".$id,
             "email"=> "required|string|email|max:255|unique:users,email,".$id,
             "password"=> "required|string|min:8:users,password,".$id,
-            "role"=> "required|Integer:users,role,".$id,
+            "role"=> "required|numeric:users,role,".$id,
         ]);
 
         try{
