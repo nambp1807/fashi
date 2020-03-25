@@ -223,6 +223,7 @@ class AdminController extends Controller
     }
     //product end
 
+
     // ham user
     public function user(){
         $user = User::all();
@@ -235,17 +236,15 @@ class AdminController extends Controller
 
     public function userStore(Request $request){
         $request->validate([
-            "name"=> "required|string|max:255:users",
-            "email"=> "required|string|email|max:255|unique:users,email,",
-            "password"=> "required|string|min:8:users,password,",
-
+            "email"=> "required|string|max:255|unique:users",// validation laravel
+            "name"=> "required|string",
+            "password"=> "required|string",
         ]);
         try{
             User::create([
                 "name"=> $request->get("name"),
                 "email"=> $request->get("email"),
                 "password"=> $request->get("password"),
-
             ]);
         }catch(\Exception $e){
             return redirect()->back();
@@ -261,7 +260,7 @@ class AdminController extends Controller
     public function userUpdate($id,Request $request){
         $user = User::find($id);
         $request->validate([
-            "name"=> "required|string|max:255:users".$id,
+            "name"=> "required|string|max:255:users,name,".$id,
             "email"=> "required|string|email|max:255|unique:users,email,".$id,
             "password"=> "required|string|min:8:users,password,".$id,
             "role"=> "required|Integer:users,role,".$id,
@@ -282,7 +281,6 @@ class AdminController extends Controller
 
 
     public function userDestroy($id){
-        //kiem tra co phai admin hay khong
         $user = User::find($id);
         try {
             $user->delete(); // xoa cung // CRUD
