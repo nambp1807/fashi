@@ -47,13 +47,13 @@
                                     <td class="p-price first-row"><p>{{$p->created_at}}</p></td>
                                     <td class="p-price first-row">
 
-                                        <form action="{{url("/viewOrder")}}">
+                                        <form action="{{url("/viewOrder/{$p->id}")}}">
                                             <button type="submit" class="btn btn-primary btn-md btn-block">See details</button>
                                         </form>
-                                        <form action="{{url("/checkout")}}" method="POST" novalidate="novalidate">
+                                        <form action="{{url("/add-order/{$p->id}")}}"  novalidate="novalidate">
                                             <button type="submit" class="btn btn-warning btn-md btn-block">Repurchase</button>
                                         </form>
-                                        <form action="{{url("/deleteOrder")}}" method="get">
+                                        <form action="{{url("/deleteOrder/{$p->id}")}}" method="get">
                                             <button type="submit" class="btn btn-light btn-md btn-block">Not buy</button>
                                         </form>
                                     </td>

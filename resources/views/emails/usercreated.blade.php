@@ -180,8 +180,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t es-p10b es-p20r es-p20l" align="center">
-                                                                <h4 style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Chúc mừng bạn đã mua hàng thành công </h4>
-                                                                <h4 style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Tổng giá trị đơn hàng: ${{$order->grand_total}}</h4>
+                                                                <h4 style="line-height: 21px; font-family: trebuchet\ ms, lucida\ grande, lucida\ sans\ unicode, lucida\ sans, tahoma, sans-serif; color: #333333;">Chúc mừng bạn đã tạo tài khoản thành công </h4>
 
                                                             </td>
                                                         </tr>

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CancelOrder;
 use App\Mail\OrderCreated;
 use App\Order;
+use App\OrderProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -181,21 +183,53 @@ class WebController extends Controller
 //    }
 
 
-    public function viewOrder($id){
 
-        $order= Order::find($id);
-        $order_products = Order::where("id",$id)->get();
-        return view('viewOrder',['order'=>$order,'order_products'=>$order_products]);
+    public function viewOrder($id)
+    {
+        $order = Order::find($id);
+        $order_product = OrderProduct::all()->where("order_id", $id);
+
+        return view("overViews", [
+            "order" => $order,
+            "order_product" => $order_product
+        ]);
     }
-    public function addOrder(){
+    public function addOrder($id)
+    {
+        $order = Order::find($id);
+        $order_product = OrderProduct::all()->where("order_id", $id);
+        $new_order = $order->replicate();
+        $new_order->status = Order::STATUS_PENDING;
+        $new_order->save();
+        foreach ($order_product as $p) {
+            DB::table("orders_products")->insert([
+                'order_id' => $new_order->id,
+                'product_id' => $p->product_id,
+                'qty' => $p->qty,
+                'price' => $p->price
+            ]);
+        }
 
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
+        return redirect()->to("checkout-success");
     }
 
-    public function deleteOrder($id){
-        Order::destroy($id);
-        return back();
-    }
 
+
+    public function deleteOrder($id)
+    {
+        $order = Order::find($id);
+        try {
+            if ($order->status != Order::STATUS_CANCEL) {
+                $order->status = Order::STATUS_CANCEL;
+                $order->save();
+            }
+        } catch (\Exception $e) {
+            return redirect()->back();
+        }
+       Mail::to(Auth::user()->email)->send(new CancelOrder($order));
+            return redirect()->to("order-history/{id}");
+    }
 
 
     public function blog(){
@@ -208,6 +242,42 @@ class WebController extends Controller
     public function contact(){
         return view('contact');
     }
+    private function formatOrder($order)
+    {
+        switch ($order->payment_method) {
+            case 'cod':
+                $order->payment_method = 'Cash On Delivery';
+                break;
+            case 'bank_transfer':
+                $order->payment_method = 'Bank Transfer Payment';
+                break;
 
+            case 'paypal':
+                $order->payment_method = 'Through Paypal';
+                break;
+        }
+        switch ($order->status) {
+            case '0':
+                $order->status = 'Pending';
+                break;
+
+            case '1':
+                $order->status = 'Process';
+                break;
+
+            case '2':
+                $order->status = 'Shipping';
+                break;
+
+            case '3':
+                $order->status = 'Completed';
+                break;
+
+            case '4':
+                $order->status = 'Cancelled';
+                break;
+        }
+        return $order;
+    }
 
 }
