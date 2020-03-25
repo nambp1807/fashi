@@ -183,14 +183,14 @@ class AdminController extends Controller
         $product = Product::find($id);
         $request->validate([
             "product_name" =>
-                "required|string|unique:product,product_name," . $id,
+                "required|string|unique:product". $id,
             "product_desc" => "required|string",
             "thumbnail" => "required|string",
             "gallery" => "required|string",
-            "category_id" => "required|integer",
-            "brand_id" => "required|integer",
+            "category_id" => "required|numeric",
+            "brand_id" => "required|numeric",
             "price" => "required|numeric",
-            "quantity" => "required|integer"
+            "quantity" => "required|numeric"
         ]);
         try {
             $product->update([
