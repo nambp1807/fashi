@@ -40,15 +40,7 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="form-group has-success">
-                        <label for="cc-name" class="control-label mb-1">role</label>
-                        <input id="cc-name" name="role" type="text" value="{{old("role")}}"
-                               class="form-control cc-name @if($errors->has("role"))is-invalid @endif" >
-                        <span class="help-block field-validation-valid"></span>
-                        @if($errors->has("role"))
-                            <p style="color:red">{{$errors->first("role")}}</p>
-                        @endif
-                    </div>
+
                     <div>
                         <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                             <i class="fa fa-lock fa-lg"></i>&nbsp;

@@ -238,14 +238,14 @@ class AdminController extends Controller
             "name"=> "required|string|max:255:users",
             "email"=> "required|string|email|max:255|unique:users,email,",
             "password"=> "required|string|min:8:users,password,",
-            "role"=> "required|Integer:users,role,",
+
         ]);
         try{
             User::create([
                 "name"=> $request->get("name"),
                 "email"=> $request->get("email"),
                 "password"=> $request->get("password"),
-                "role"=> $request->get("role")
+
             ]);
         }catch(\Exception $e){
             return redirect()->back();
