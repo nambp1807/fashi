@@ -3,14 +3,14 @@
 @section("top_content")
     <div class="col-md-12">
         <div class="overview-wrap">
-            <h2 class="title-1">Sửa danh mục sản phẩm</h2>
+            <h2 class="title-1">Sửa thông tin người dùng </h2>
         </div>
     </div>
 @endsection
 @section('main_content')
     <div class="col-lg-6">
         <div class="card">
-            <div class="card-header">Sửa danh mục</div>
+            <div class="card-header">Sửa thông tin</div>
             <div class="card-body">
                 <form action="{{url("admin/user/update",['id'=>$user->id])}}" method="post">
                     @csrf
