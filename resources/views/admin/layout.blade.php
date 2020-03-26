@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <div class="header-mobile-inner">
                     <a class="logo" href="index.html">
-                        <img src="{{asset("admin/images/icon/logo.png")}}" alt="CoolAdmin" />
+                        <img src="images/icon/logo.png" alt="CoolAdmin" />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -26,19 +26,16 @@
                 <ul class="navbar-mobile__list list-unstyled">
                     <li class="has-sub">
                         <a class="js-arrow" href="#">
-                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <i class="fas fa-tachometer-alt"></i>quản lí</a>
                         <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                             <li>
-                                <a href="index.html">Dashboard 1</a>
+                                <a href="#">Category</a>
                             </li>
                             <li>
-                                <a href="index2.html">Dashboard 2</a>
+                                <a href="#">Brand</a>
                             </li>
                             <li>
-                                <a href="index3.html">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="index4.html">Dashboard 4</a>
+                                <a href="#">Product</a>
                             </li>
                         </ul>
                     </li>
@@ -125,28 +122,41 @@
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar d-none d-lg-block">
         <div class="logo">
-            <a href="#">
+            <a href="{{url('admin/category')}}">
                 <img src="{{asset("admin/images/icon/logo.png")}}" alt="Cool Admin" />
             </a>
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
-                    <li class="active has-sub">
+                    <li>
+                        <form method="get" action="{{url('/')}}">
+                            <button class="btn col-md-9"><b>Fashi Shop</b></button>
+                        </form>
+                    </li>
+                    <li class="has-sub">
                         <a class="js-arrow" href="#">
-                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <i class="fas fa-tachometer-alt"></i>Manage</a>
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                             <li>
-                                <a href="index.html">Dashboard 1</a>
+                                <form method="get" action="{{url('admin/category')}}">
+                                    <button class="btn btn-info col-md-12">Category</button>
+                                </form>
                             </li>
                             <li>
-                                <a href="index2.html">Dashboard 2</a>
+                                <form method="get" action="{{url('admin/brand')}}">
+                                    <button class="btn btn-info col-md-12">Brand</button>
+                                </form>
                             </li>
                             <li>
-                                <a href="index3.html">Dashboard 3</a>
+                                <form method="get" action="{{url('admin/product')}}">
+                                    <button class="btn btn-info col-md-12">Product</button>
+                                </form>
                             </li>
                             <li>
-                                <a href="index4.html">Dashboard 4</a>
+                                <form method="get" action="{{url('admin/user')}}">
+                                    <button class="btn btn-info col-md-12">User</button>
+                                </form>
                             </li>
                         </ul>
                     </li>
@@ -254,7 +264,7 @@
                                         </div>
                                         <div class="mess__item">
                                             <div class="image img-cir img-40">
-                                                <img src="{{asset("admin/images/icon/avatar-06.jpg")}}" alt="Michelle Moreno" />
+                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
                                             </div>
                                             <div class="content">
                                                 <h6>Michelle Moreno</h6>
@@ -359,7 +369,7 @@
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        <img src="{{asset("admin/images/icon/avatar-01.jpg")}}" alt="John Doe" />
+                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                     </div>
                                     <div class="content">
                                         <a class="js-acc-btn" href="#">john doe</a>
@@ -368,7 +378,7 @@
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="{{asset("admin/images/icon/avatar-01.jpg")}}" alt="John Doe" />
+                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                                 </a>
                                             </div>
                                             <div class="content">
