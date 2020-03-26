@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Mail\CancelOrder;
 use App\Mail\OrderCreated;
 use App\Order;
@@ -31,6 +32,7 @@ class WebController extends Controller
 
     public function listing($id){
         $products = Product::where("category_id",$id)->take(9)->get();
+//        $brand = Brand::where("category_id",$id)->take(9)->get();
 
         return view("listing",['product'=>$products]);
     }
@@ -244,37 +246,34 @@ class WebController extends Controller
     }
     private function formatOrder($order)
     {
-        switch ($order->payment_method) {
+        switch ($order->payment_total) {
             case 'cod':
-                $order->payment_method = 'Cash On Delivery';
+                $order->payment_total = 'Cheque Payment';
                 break;
-            case 'bank_transfer':
-                $order->payment_method = 'Bank Transfer Payment';
+            case 'paypal':
+                $order->payment_total = 'Paypal';
                 break;
 
-            case 'paypal':
-                $order->payment_method = 'Through Paypal';
-                break;
         }
         switch ($order->status) {
             case '0':
-                $order->status = 'Pending';
+                $order->status = 'STATUS_PENDING';
                 break;
 
             case '1':
-                $order->status = 'Process';
+                $order->status = 'STATUS_PROCESS';
                 break;
 
             case '2':
-                $order->status = 'Shipping';
+                $order->status = 'STATUS_SHIPPING';
                 break;
 
             case '3':
-                $order->status = 'Completed';
+                $order->status = 'STATUS_COMPLETE';
                 break;
 
             case '4':
-                $order->status = 'Cancelled';
+                $order->status = 'STATUS_CANCEL';
                 break;
         }
         return $order;
