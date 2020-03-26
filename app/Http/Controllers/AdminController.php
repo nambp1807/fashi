@@ -141,31 +141,26 @@ class AdminController extends Controller
     }
 
     public function productStore(Request $request){
-        //kiem tra co phai admin hay khong
         $request->validate([
             "product_name" => "required|string|unique:product",
             "product_desc" => "required|string",
             "thumbnail" => "required|string",
-            "gallery" => "required|string",
             "category_id" => "required|integer",
             "brand_id" => "required|integer",
             "price" => "required|numeric",
             "quantity" => "required|integer"
         ]);
-
         try {
             Product::create([
                 "product_name" => $request->get("product_name"),
                 "product_desc" => $request->get("product_desc"),
                 "thumbnail" => $request->get("thumbnail"),
-                "gallery" => $request->get("gallery"),
                 "category_id" => $request->get("category_id"),
                 "brand_id" => $request->get("brand_id"),
                 "price" => $request->get("price"),
                 "quantity" => $request->get("quantity")
-
             ]);
-        }catch (\Exception $e){
+        } catch (Exception $e) {
             return redirect()->back();
         }
         return redirect()->to("admin/product");
@@ -182,21 +177,19 @@ class AdminController extends Controller
         $product = Product::find($id);
         $request->validate([
             "product_name" =>
-                "required|string|unique:product". $id,
+                "required|string|unique:product,product_name," . $id,
             "product_desc" => "required|string",
             "thumbnail" => "required|string",
-            "gallery" => "required|string",
-            "category_id" => "required|numeric",
-            "brand_id" => "required|numeric",
+            "category_id" => "required|integer",
+            "brand_id" => "required|integer",
             "price" => "required|numeric",
-            "quantity" => "required|numeric"
+            "quantity" => "required|integer"
         ]);
         try {
             $product->update([
                 "product_name" => $request->get("product_name"),
                 "product_desc" => $request->get("product_desc"),
                 "thumbnail" => $request->get("thumbnail"),
-                "gallery" => $request->get("gallery"),
                 "category_id" => $request->get("category_id"),
                 "brand_id" => $request->get("brand_id"),
                 "price" => $request->get("price"),
