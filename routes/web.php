@@ -73,5 +73,32 @@ Route::get('/logout',function(){
 
     return redirect()->to("/login");
 });
+// pratical
 
 
+Route::get('/user', function () {
+    $user = Student::all();
+    return view('user', ["user" => $user]);
+});
+Route::get('user/create', function () {
+    return view('userCreate');
+});
+Route::post('user/store', function (Request $request) {
+    $request->validate([
+        "name" => "required|string",
+        "age" => "required|numeric",
+        "address" => "required|string",
+        "tel" => "required|string"
+    ]);
+    try {
+        Student::create([
+            "name" => $request->get("name"),
+            "age" => $request->get("age"),
+            "address" => $request->get("address"),
+            "telephone" => $request->get("tel")
+        ]);
+    } catch (\Exception $e) {
+        return redirect()->back();
+    }
+    return redirect()->to("/user");
+});
