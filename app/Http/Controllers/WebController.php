@@ -28,7 +28,7 @@ class WebController extends Controller
     public function search(Request $request){
         $result = $request->result;
         $result = str_replace(' ','%',$result);
-        $product = Product::Where('product_name','like','%'.$result.'%')->get();
+        $product = Product::Where('product_name','like','%'.$result.'%')->take(9)->get();
 
         return view("listing",['product'=>$product]);
     }
