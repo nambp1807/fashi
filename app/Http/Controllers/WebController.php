@@ -26,7 +26,10 @@ class WebController extends Controller
         return view("home",['newests'=>$newests,'cheaps'=>$cheaps]);
     }
     public function search(Request $request){
-        $product = Product::Where('product_name','like','%'.$request->key.'%')->orWhere('price',$request->key)->take(9)->get();
+        $result = $request->result;
+        $result = str_replace(' ','%',$result);
+        $product = Product::Where('product_name','like','%'.$result.'%')->get();
+
         return view("listing",['product'=>$product]);
     }
 

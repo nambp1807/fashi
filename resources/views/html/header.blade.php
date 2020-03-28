@@ -45,7 +45,7 @@
                     <div class="advanced-search">
                         <button type="button" class="category-btn">All Categories</button>
                         <form class="input-group" method="get" action="{{url('/search')}}">
-                            <input type="text" name="key" placeholder="What do you need?">
+                            <input type="text" name="result" placeholder="What do you need?">
                             <button type="submit"><i class="ti-search"></i></button>
                         </form>
                     </div>
