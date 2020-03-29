@@ -2,9 +2,12 @@
 @section("top_content")
     <div class="col-md-12">
         <div class="overview-wrap">
-            <h2 class="title-1">Danh mục sản phẩm</h2>
-            <a class="au-btn au-btn-icon au-btn--blue" href="{{url('admin/category/create')}}">
-                <i class="zmdi zmdi-plus"></i>Thêm danh mục</a>
+            <h2 class="title-1">Category Manage</h2>
+            <form method="get" action="{{url('admin/category/create')}}">
+                <button class="au-btn au-btn-icon au-btn--blue">
+                    <i class="zmdi zmdi-plus"></i>Create Category
+                </button>
+            </form>
         </div>
     </div>
 @endsection

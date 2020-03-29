@@ -2,9 +2,12 @@
 @section("top_content")
     <div class="col-md-12">
         <div class="overview-wrap">
-            <h2 class="title-1">List User</h2>
-            <a class="au-btn au-btn-icon au-btn--blue" href="{{url('admin/user/create')}}">
-                <i class="zmdi zmdi-plus"></i>Add User</a>
+            <h2 class="title-1">User Manage</h2>
+            <form method="get" action="{{url('admin/user/create')}}">
+                <button class="au-btn au-btn-icon au-btn--blue">
+                    <i class="zmdi zmdi-plus"></i>Create User
+                </button>
+            </form>
         </div>
     </div>
 @endsection
